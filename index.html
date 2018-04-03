@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang = "en">
+     <head>
+          <title>
+               ChatBots
+          </title>
+          <!-- favicon  -->
+          <link rel="icon" href="img/logos/checkbot.gif">
+          <meta charset="UTF-8">
+          <!-- some fonts  -->
+         <!-- <link href="css/libs/google_fonts.css" rel="stylesheet" type="text/css"> -->
+          <link rel="stylesheet" href="css/libs/fonts/google_fonts.css"/>
+
+          <!-- Using panels in order to make a single page application -->
+          <!-- Animations and stuff is made in panels.css -->
+          <link rel="stylesheet" href="css/spa/panels.css"/>
+
+
+          <link rel="stylesheet" href="css/buttons/home_hover.css"/>
+          <link rel="stylesheet" href="css/buttons/header_hover.css"/>
+
+          <link rel="stylesheet" href="css/chat/word_chat_frame.css"/>
+          <link rel="stylesheet" href="css/chat/weather_chat_frame.css"/>
+
+          <link rel="stylesheet" href="css/fonts_styles.css"/>
+
+
+          <link rel="stylesheet" href="css/d3_style/d3tree.css"/>
+
+          <link rel="stylesheet" href="css/tables.css"/>;
+
+          <link rel="stylesheet" href="css/chat/curr_chat_frame.css"/>
+
+
+          <link rel="stylesheet" href="css/buttons/curr_choice.css"/>
+
+          <link rel="stylesheet" href="css/libs/currency_flags/dist/currency-flags.min.css"/>
+     </head>
+<body>
+
+     <!-- Navigation -->
+     <div class="menu">
+
+          <div class="one-third">
+               <a class="btn-draw" href="#word-bot" data-hover="WordBot">
+                    <span>
+                         WordBot...
+                    </span>
+               </a>
+               <p class="bot-description">
+                    Wondering what are the synonyms of a word ? Searching for definitions or translations ? You may need the WordBot. Linked to the world's largest ontology, DBpedia, the WordBot knows everything about words.
+               </p>
+          </div>
+
+          <div class="one-third">
+               <a class="btn-draw" href="#weather-bot" data-hover="WeatherBot">
+                    <span>
+                         WeatherBot...
+                    </span>
+               </a>
+               <p class="bot-description">
+                    Thanks to the WeatherBot, you'll know 24/7 what's the weather like.
+               </p>
+          </div>
+
+          <div class="one-third">
+               <a class="btn-draw" href="#curr-bot" data-hover="CurrencyBot">
+                    <span>
+                         CurrencyBot...
+                    </span>
+               </a>
+               <p class="bot-description">
+                    Do you need to know what is 742 euros worth in US dollars ? Or in any other currency ? Want to see the currency rate between some given moneys or between the most used moneys in the world ? Just let the currency bot help you.
+               </p>
+          </div>
+
+          <div class="menu-footer">
+               <p>
+                    <a class="header-button" href ="http://dorian-naaji.fr">
+                         © Dorian Naaji ⋅ 2018
+                    </a>
+               </p>
+          </div>
+     </div>
+
+
+     <!-- Home Panel  -->
+
+     <div class="panel" id="home">
+     </div>
+
+     <!-- The WordBot -->
+     <div class="panel" id="word-bot">
+          <div class="panel-content">
+               <div class="panel-header">
+                    <div class="panel-header-content">
+                         <a class="header-button" href="#home" data-hover="WordBot">
+                              Home
+                         </a>
+                    </div>
+               </div>
+               <!-- the chat frame  -->
+               <div id="word-bot-frame">
+                    <!-- content of the chat frame  -->
+                    <div class="content">
+                         <!-- top banner of the chat frame  -->
+                         <div class="contact-profile">
+                              <!-- Image for the bot  -->
+                              <img src="img/logos/chatbot.png" alt="" />
+                              <p class="nunitoBold">
+                                   WordBot
+                              </p>
+                         </div>
+                         <!-- div containing the messages -->
+                         <div class="word-bot-messages">
+                              <!-- <ul> containing the messages : <li class="word-bot-replies"> for the user and <li class="word-bot-sent"> for the bot -->
+                              <ul id="word-bot-mess">
+                                   <li class="word-bot-sent">
+                                        <img src="img/logos/chatbot.png" alt=""/>
+                                        <p>
+                                             Hello ! I am a wordbot. You can ask me definitions for a precise word, translations in 11 languages I know (German, Japanese, Arabian, Spanish, French, Italian, Dutch, Polish, Portuguese, Russian and Chinese) and you can also ask me for synonyms / related words / domains of use of a word.
+                                        </p>
+                                   </li>
+                              </ul>
+                         </div>
+                         <!-- div containing stuff to send messages : button and textbox -->
+                         <div class="word-bot-messages-input">
+                              <div class="wrap">
+                                   <input type="text" id="word-bot-txt-search" placeholder="Write your message..."  />
+                                   <button id="word-bot-ok-btn">
+                                        <img src="img/logos/send.png" alt="send" width="12" height="12"/>
+                                   </button>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </div>
+
+     <!-- The WeatherBot -->
+     <div class="panel" id="weather-bot">
+          <div class="panel-content">
+               <div class="panel-header">
+                    <div class="panel-header-content">
+                         <a class="header-button" href="#home" data-hover="WordBot">
+                              Home
+                         </a>
+                    </div>
+               </div>
+               <!-- the chat frame  -->
+               <div id="weather-bot-frame">
+                    <!-- content of the chat frame  -->
+                    <div class="content">
+                         <!-- top banner of the chat frame  -->
+                         <div class="contact-profile">
+                              <!-- Image for the bot  -->
+                              <img src="img/logos/chatbot.png" alt="" />
+                              <p class="nunitoBold">
+                                   WeatherBot
+                              </p>
+                         </div>
+                         <!-- div containing the messages -->
+                         <div class="weather-bot-messages">
+                              <!-- <ul> containing the messages : <li class="weather-bot-replies"> for the user and <li class="weather-bot-sent"> for the bot -->
+                              <ul id="weather-bot-mess">
+                                   <li class="weather-bot-sent">
+                                        <img src="img/logos/chatbot.png" alt=""/>
+                                        <p>
+                                             Hey, I am the weatherbot. You can ask me for the current weather of any town, just ask me !
+                                        </p>
+                                   </li>
+                              </ul>
+                         </div>
+                         <!-- div containing stuff to send messages : button and textbox -->
+                         <div class="weather-bot-messages-input">
+                              <div class="wrap">
+                                   <input type="text" id="weather-bot-txt-search" placeholder="Write your message..."  />
+                                   <button id="weather-bot-btn-ok">
+                                        <img src="img/logos/send.png" alt="send" width="12" height="12"/>
+                                   </button>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </div>
+
+     <!-- The GeoBot -->
+     <div class="panel" id="curr-bot">
+          <div class="panel-content">
+               <div class="panel-header">
+                    <div class="panel-header-content">
+                         <a class="header-button" href="#home" data-hover="WordBot">
+                              Home
+                         </a>
+                    </div>
+               </div>
+               <!-- the chat frame  -->
+               <div id="curr-bot-frame">
+                    <!-- content of the chat frame  -->
+                    <div class="content">
+                         <!-- top banner of the chat frame  -->
+                         <div class="contact-profile">
+                              <!-- Image for the bot  -->
+                              <img src="img/logos/chatbot.png" alt="" />
+                              <p class="nunitoBold">
+                                   CurrencyBot
+                              </p>
+                         </div>
+                         <!-- div containing the messages -->
+                         <div class="curr-bot-messages">
+                              <!-- <ul> containing the messages : <li class="geo-bot-replies"> for the user and <li class="geo-bot-sent"> for the bot -->
+                              <ul id="curr-bot-mess">
+                                   <li class="curr-bot-sent">
+                                        <img src="img/logos/chatbot.png" alt=""/>
+                                        <p>
+                                             Hello ! I am the currency bot. Wondering how much is 1 euro in other currencies ? Just ask me !
+                                        </p>
+                                   </li>
+                              </ul>
+                         </div>
+                         <!-- div containing stuff to send messages : button and textbox -->
+                         <div class="curr-bot-messages-input">
+                              <div class="wrap">
+                                        <input type="number" id="curr-bot-amount" placeholder="Enter your amount..." size="20" maxlength="20" class="inptext"  />
+
+                                        <div class="currency-flag currency-flag-eur" id="source_flag">
+                                        </div>
+
+                                        <select class="chosen-select" title="Source currency" id="countries">
+                                             <optgroup class="common-currencies" label="Common currencies">
+                                                  <option value="EUR" selected="selected">EUR (€)</option>
+                                                  <option value="USD" disabled >USD ($)</option>
+                                                  <option value="CAN" disabled >CAN ($)</option>
+                                             </optgroup>
+                                             <optgroup class="other-currencies" label="Other currencies">
+                                             </optgroup>
+                                        </select>
+
+                                        <div class="spacer">
+                                             TO
+                                        </div>
+
+                                        <div class="currency-flag currency-flag-usd" id="converted_flag">
+                                        </div>
+
+                                        <select class="chosen-select" title="Converted currency" id="countries2">
+                                             <optgroup class="common-currencies" label="Common currencies">
+                                                  <option selected="selected" value="USD">USD ($)</option>
+                                                  <option value="CAD">CAD ($)</option>
+                                             </optgroup>
+                                             <optgroup class="other-currencies2" label="Other currencies">
+                                             </optgroup>
+                                        </select>
+
+                                   <button id="curr-bot-btn-ok">
+                                        <img src="img/logos/send.png" alt="send" width="12" height="12"/>
+                                   </button>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </div>
+
+</body>
+
+     <!-- libs  -->
+     <script type="text/javascript" src="js/libraries/d3.min.js"></script>
+     <script type="text/javascript" src="js/libraries/jquery-3.3.1.min.js"></script>
+     <!-- the app -->
+     <script type="text/javascript" src="js/application.js"></script>
+     <!-- WORDBOT  -->
+     <script type="text/javascript" src="js/word_chat.js"></script>
+     <script type="text/javascript" src="js/bots/dbpedia_bot/dbp/word_bot/dbp_message.js"></script>
+     <script type="text/javascript" src="js/bots/dbpedia_bot/dbp/word_bot/dbp_randomAnswer.js"></script>
+     <script type="text/javascript" src="js/bots/dbpedia_bot/dbp/word_bot/dbp_sparql_request.js"></script>
+     <script type="text/javascript" src="js/bots/dbpedia_bot/dbp/word_bot/dbp_sparql_result_parser.js"></script>
+     <script type="text/javascript" src="js/bots/luis_api/wordbot/api_request.js"></script>
+     <script type="text/javascript" src="js/bots/luis_api/wordbot/api_result_parser.js"></script>
+     <script type="text/javascript" src="js/stringManagement/manage_str.js"></script>
+     <script type="text/javascript" src="js/bots/dbpedia_bot/treeVizualisation/d3tree.js"></script>
+     <!-- WEATHERBOT  -->
+     <script type="text/javascript" src="js/weather_chat.js"></script>
+     <script type="text/javascript" src="js/bots/luis_api/weatherbot/api_wb_request.js"></script>
+     <script type="text/javascript" src="js/bots/luis_api/weatherbot/api_wb_result_parser.js"></script>
+     <script type="text/javascript" src="js/bots/accuweather_bot/accuweather/accuweather_answer.js"></script>
+     <script type="text/javascript" src="js/bots/accuweather_bot/accuweather/accuweather_message.js"></script>
+     <script type="text/javascript" src="js/bots/accuweather_bot/accuweather/accuweather_request.js"></script>
+     <script type="text/javascript" src="js/bots/accuweather_bot/accuweather/accuweather_result_parser.js"></script>
+
+     <!-- CURRENCYBOT -->
+     <script type="text/javascript" src="js/curr_chat.js"></script>
+     <script type="text/javascript" src="js/bots/currency_bot/set_interface.js"></script>
+     <script type="text/javascript" src="js/bots/currency_bot/data_fixer/df_request.js"></script>
+     <script type="text/javascript" src="js/bots/currency_bot/calculator.js"></script>
+     <script type="text/javascript" src="js/bots/currency_bot/data_fixer/currencies.js"></script>
+     <script type="text/javascript" src="js/bots/currency_bot/curr_answer.js"></script>
+
+
+</html>
