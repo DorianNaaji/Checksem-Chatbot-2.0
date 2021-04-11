@@ -19,7 +19,7 @@ class dbp_sparql_request
     querySparqlDefinition(word)
     {
         let capitalizedWord = this._strManager.capitalizeFirstLetter(word);
-        let endpoint = "http://dbpedia.org/sparql";
+        let endpoint = "https://dbpedia.org/sparql?default-graph-uri=http%3A%2F%2Fdbpedia.org&";
         let query =  "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT ?def WHERE { res:" + capitalizedWord + " dbo:abstract ?def. FILTER (lang(?def) = 'en')}";
         this.startSparqlRequest(query, endpoint, 'definition');
     }
@@ -31,7 +31,7 @@ class dbp_sparql_request
     querySparqlSubject(word)
     {
         let capitalizedWord = this._strManager.capitalizeFirstLetter(word);
-        let endpoint = "http://dbpedia.org/sparql";
+        let endpoint = "https://dbpedia.org/sparql?default-graph-uri=http%3A%2F%2Fdbpedia.org&";
         let query = "PREFIX dcterms: <http://purl.org/dc/terms/> PREFIX res: <http://dbpedia.org/resource/> SELECT ?subject WHERE { res:" + capitalizedWord + " dct:subject ?subject }";
         this._synonymWord = capitalizedWord;
         this.startSparqlRequest(query, endpoint, 'subject');
@@ -45,7 +45,7 @@ class dbp_sparql_request
     querySparqlAllTranslations(word)
     {
         let capitalizedWord = this._strManager.capitalizeFirstLetter(word);
-        let endpoint = "http://dbpedia.org/sparql";
+        let endpoint = "https://dbpedia.org/sparql?default-graph-uri=http%3A%2F%2Fdbpedia.org&";
         let query = "PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT ?trad (lang(?trad) as ?lang) WHERE { res:" + capitalizedWord + " rdfs:label ?trad }";
         this.startSparqlRequest(query, endpoint, 'all_translations');
     }
@@ -58,7 +58,7 @@ class dbp_sparql_request
             languagesTag[i] = this._strManager.languageStrToLanguageTag(languages[i]);
         }
         let capitalizedWord = this._strManager.capitalizeFirstLetter(word);
-        let endpoint = "http://dbpedia.org/sparql";
+        let endpoint = "https://dbpedia.org/sparql?default-graph-uri=http%3A%2F%2Fdbpedia.org&";
         if (languagesTag.length === 1)
         {
 
