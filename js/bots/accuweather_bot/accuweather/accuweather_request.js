@@ -11,9 +11,10 @@ class accuweather_request
         for (let i = 0; i < cities.length; i++)
         {
             let that = this;
-            let queryURL = "http://api.openweathermap.org/data/2.5/weather?q=";
+            let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=";
             queryURL += cities[i];
-            queryURL +="&APPID=*******";
+            // insert app id
+            queryURL +="&APPID=INSERTAPPIDHERE";
             $.ajax
             ({
                 dataType: "json",
